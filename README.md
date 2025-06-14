@@ -60,7 +60,7 @@ In Postman, set the Auth Type to Firebase Cloud Messaging API and use OAuth 2.0 
 **Endpoint:**
 
 ```
-POST https://fcm.googleapis.com/v1/projects/shoferiim-80e29/messages:send
+POST https://fcm.googleapis.com/v1/projects/[YOUR_PROJECT_ID]/messages:send
 ```
 
 **Headers:**
