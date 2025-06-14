@@ -7,6 +7,8 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/components/useColorScheme';
+import { usePushNotifications } from '@/utils/use-push-notifications';
+import { useFCMNotifications } from '@/utils/use-fcm-notifications';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -22,10 +24,16 @@ export const unstable_settings = {
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const { expoPushToken } = usePushNotifications();
+  const { fcmToken, notification } = useFCMNotifications();
   const [loaded, error] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     ...FontAwesome.font,
   });
+
+  console.info('Expo Push token: ', expoPushToken)
+  console.info('Notification: ', notification)
+  console.info('FCM Token: ', fcmToken)
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
