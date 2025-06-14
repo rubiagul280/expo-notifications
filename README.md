@@ -39,6 +39,8 @@ This guide includes:
 
 To send push notifications using Firebase Cloud Messaging (FCM) v1 API (recommended, as legacy APIs are being deprecated):
 
+Choose one of the option for access token if authorize in postman then no need to add headers
+
 ### 🔐 FCM Access Token
 
 You must use a **Firebase Admin SDK service account** to authorize your requests:
@@ -47,7 +49,13 @@ You must use a **Firebase Admin SDK service account** to authorize your requests
 * Use it to obtain an OAuth2 access token with scope:
   `https://www.googleapis.com/auth/firebase.messaging`
 
+### 🔑 Authorization in Postman
+
+In Postman, set the Auth Type to Firebase Cloud Messaging API and use OAuth 2.0 for authorization. Click the Authorize button to generate the token.
+
 ### ✅ POST Request to FCM v1 API
+
+
 
 **Endpoint:**
 
